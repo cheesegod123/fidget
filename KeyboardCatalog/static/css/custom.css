@@ -1,0 +1,335 @@
+/* Custom styles for fidget.com website - Apple-inspired design */
+
+:root {
+  --apple-blue: #0066CC;
+  --apple-red: #E30000;
+  --apple-black: #000000;
+  --apple-white: #FFFFFF;
+  --apple-gray: #F5F5F7;
+  --apple-dark-gray: #1D1D1F;
+  --apple-light-gray: #86868B;
+}
+
+/* Animation for elements */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Apple-style typography */
+body {
+  background-color: #000000;
+  color: #F5F5F7;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  letter-spacing: -0.022em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+.fidget-title {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-size: 3rem;
+  color: #F5F5F7;
+}
+
+.lead {
+  font-weight: 400;
+  color: #86868B;
+  letter-spacing: -0.01em;
+}
+
+/* Card styling - Apple style */
+.card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #1D1D1F;
+  border: none;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  background: #1D1D1F;
+  border-bottom: none;
+  padding: 1.5rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Key option styling - Apple tile style */
+.key-option {
+  height: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.key-label {
+  border-radius: 18px;
+  padding: 1.5rem 1rem;
+  transition: all 0.3s ease;
+  height: 100%;
+  min-height: 160px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: #1D1D1F;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.key-label:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background: #2D2D31;
+}
+
+.key-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #F5F5F7;
+}
+
+.key-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #F5F5F7;
+}
+
+.key-icon {
+  font-size: 1.8rem;
+  margin-top: auto;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  color: var(--apple-blue);
+}
+
+/* Selection result styling */
+.selection-result .alert {
+  background: #1D1D1F !important;
+  border: none !important;
+  border-radius: 18px !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+.price-display {
+  margin-top: 1rem;
+}
+
+.price-display .badge {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--apple-blue) !important;
+  border-radius: 18px;
+}
+
+/* Apple-style buttons */
+.btn {
+  border-radius: 22px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--apple-blue);
+  border-color: var(--apple-blue);
+}
+
+.btn-primary:hover {
+  background-color: #0055B0;
+  border-color: #0055B0;
+}
+
+.btn-outline-primary {
+  border-color: var(--apple-blue);
+  color: var(--apple-blue);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--apple-blue);
+  color: white;
+}
+
+/* Apple-style button-check styling */
+.btn-check:checked + .btn-outline-primary {
+  background-color: var(--apple-blue);
+  border-color: var(--apple-blue);
+  color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+}
+
+/* Color customization styles */
+.customization-options {
+  background: #1D1D1F;
+  border: none;
+}
+
+.color-picker-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-preview {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.color-preview:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.preview-container {
+  padding: 24px;
+  background: #1D1D1F;
+  border-radius: 18px;
+  margin-top: 1.5rem;
+}
+
+.key-preview {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  min-height: 150px;
+}
+
+.key-preview svg {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+/* Base style for all key SVGs */
+.key-svg .key-base {
+  fill: var(--apple-blue);
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 1;
+}
+
+/* Form controls - Apple style */
+.form-select {
+  background-color: #2D2D31;
+  border: none;
+  border-radius: 12px;
+  color: #F5F5F7;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.form-select:focus {
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.25);
+  border: none;
+}
+
+.form-select option {
+  background-color: #2D2D31;
+  color: #F5F5F7;
+  padding: 10px;
+}
+
+.form-check-input {
+  border-radius: 8px;
+  border: 2px solid #86868B;
+  width: 20px;
+  height: 20px;
+}
+
+.form-check-input:checked {
+  background-color: var(--apple-blue);
+  border-color: var(--apple-blue);
+}
+
+.form-check-label {
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Footer styling */
+footer {
+  color: #86868B;
+  font-size: 0.9rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Mobile menu styling */
+.mobile-menu .nav-link {
+  color: #F5F5F7;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu .nav-link:hover,
+.mobile-menu .nav-link:focus {
+  background-color: rgba(0, 102, 204, 0.1);
+  color: var(--apple-blue);
+}
+
+.nav-link {
+  color: #F5F5F7;
+  font-weight: 400;
+  padding: 0.5rem 1.2rem;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--apple-blue);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fidget-title {
+    font-size: 2.5rem;
+  }
+  
+  .key-label {
+    min-height: 150px;
+    padding: 1rem;
+  }
+  
+  .key-name {
+    font-size: 1rem;
+  }
+  
+  .key-price {
+    font-size: 1.2rem;
+  }
+  
+  .key-icon {
+    font-size: 1.5rem;
+  }
+  
+  .customization-options .card-body {
+    padding: 1rem;
+  }
+  
+  .preview-container {
+    padding: 15px;
+  }
+  
+  .color-picker-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .color-preview {
+    margin-top: 8px;
+  }
+}
