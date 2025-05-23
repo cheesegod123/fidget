@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-lg border-0 mb-4">
+            <div class="card-header bg-transparent">
+                <h2 class="text-center mb-0">Order Confirmation</h2>
+            </div>
+            <div class="card-body">
+                <div class="order-success text-center mb-5">
+                    <i class="fas fa-check-circle" style="font-size: 4rem; color: #4CAF50; margin-bottom: 1rem;"></i>
+                    <h3>Thank you for your order, {{ first_name }}!</h3>
+                    <p class="text-muted">Your fidget keys will be shipped soon.</p>
+                </div>
+                
+                <div class="order-details">
+                    <h4 class="mb-3">Order Details</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>Product:</th>
+                                    <td>{{ product_key }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Base Color:</th>
+                                    <td>
+                                        <span class="color-dot" style="background-color: {{ base_color }}; display: inline-block; width: 16px; height: 16px; border-radius: 50%; margin-right: 5px;"></span>
+                                        {{ base_color }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Top Color:</th>
+                                    <td>
+                                        <span class="color-dot" style="background-color: {{ top_color }}; display: inline-block; width: 16px; height: 16px; border-radius: 50%; margin-right: 5px;"></span>
+                                        {{ top_color }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Warranty:</th>
+                                    <td>{{ warranty }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Total Price:</th>
+                                    <td>${{ total_price }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="customer-details mt-5">
+                    <h4 class="mb-3">Customer Information</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>Name:</th>
+                                    <td>{{ first_name }} {{ last_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email:</th>
+                                    <td>{{ email }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Lunch Preference:</th>
+                                    <td>{{ lunch }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="/" class="btn btn-primary">Return to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
