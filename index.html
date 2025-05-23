@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fidget.com</title>
+    
+    <!-- Bootstrap CSS via Replit-themed version -->
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <header class="mb-5 text-center">
+            <h1 class="display-4 fidget-title">fidget.com <i class="fas fa-keyboard"></i></h1>
+            <p class="lead">Premium fidget keyboard options</p>
+        </header>
+        <nav class="d-none d-md-flex justify-content-center mb-4">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile menu -->
+        <div class="d-md-none mobile-menu mb-4">
+            <button class="btn btn-outline-secondary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+                Menu <i class="fas fa-bars ms-2"></i>
+            </button>
+            <div class="collapse mt-2" id="mobileNav">
+                <div class="card card-body p-0">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link p-3" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-3" href="#">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-3" href="#">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-3" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <main>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card shadow-lg border-0 mb-4">
+                        <div class="card-header bg-transparent">
+                            <h2 class="text-center mb-0">Premium Fidget Key Options</h2>
+                        </div>
+                        <div class="card-body">
+                            <form id="keyForm">
+                                <div class="row justify-content-center g-4" id="keyOptions">
+                                    <!-- Key options will be dynamically inserted here via JavaScript -->
+                                </div>
+                                
+                                <div class="d-grid gap-2 col-md-4 mx-auto mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        Select Option <i class="fas fa-check-circle ms-2"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div id="selectionResult" class="selection-result text-center" style="display: none;">
+                        <div class="alert shadow-sm p-4 animate-fade-in" style="background: rgba(33, 150, 243, 0.15); border: 2px solid var(--fidget-blue-dark); border-radius: 1rem;">
+                            <h3 class="mb-3">Your Selection</h3>
+                            <p class="fs-5">You selected: <strong id="selectedKeyText"></strong></p>
+                            
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <div class="col-md-10">
+                                    <div class="card customization-options">
+                                        <div class="card-header bg-transparent">
+                                            <h4 class="mb-0">Customize Your Fidget Keys</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <form id="customizeForm" class="customize-form">
+                                                <input type="hidden" id="selectedKey" name="key" value="">
+                                                
+                                                <div class="row g-4">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">Base Color (+$0.50)</label>
+                                                            <div class="color-picker-wrapper">
+                                                                <select name="base_color" id="baseColor" class="form-select">
+                                                                    <option value="#0066CC" style="background-color: #0066CC; color: white;">#0066CC</option>
+                                                                    <option value="#E30000" style="background-color: #E30000; color: white;">#E30000</option>
+                                                                    <option value="#000000" style="background-color: #000000; color: white;">#000000</option>
+                                                                    <option value="#FFFFFF" style="background-color: #FFFFFF; color: white;">#FFFFFF</option>
+                                                                </select>
+                                                                <div class="color-preview" id="baseColorPreview" style="background-color: #0066CC;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label">Top Color (+$0.50)</label>
+                                                            <div class="color-picker-wrapper">
+                                                                <select name="top_color" id="topColor" class="form-select">
+                                                                    <option value="#0066CC" style="background-color: #0066CC; color: white;">#0066CC</option>
+                                                                    <option value="#E30000" style="background-color: #E30000; color: white;">#E30000</option>
+                                                                    <option value="#000000" style="background-color: #000000; color: white;">#000000</option>
+                                                                    <option value="#FFFFFF" style="background-color: #FFFFFF; color: white;" selected>#FFFFFF</option>
+                                                                </select>
+                                                                <div class="color-preview" id="topColorPreview" style="background-color: #FFFFFF;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-check mt-4">
+                                                    <input class="form-check-input" type="checkbox" name="warranty" id="warranty">
+                                                    <label class="form-check-label" for="warranty">
+                                                        Add 1-Year Warranty Protection (+$1.00)
+                                                    </label>
+                                                </div>
+                                                
+                                                <div class="preview-container mt-4">
+                                                    <h5>Live Preview</h5>
+                                                    <div class="key-preview" id="keyPreview">
+                                                        <!-- Preview will be generated via JavaScript -->
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="price-display mt-4">
+                                                    <h5>Total Price: <span class="badge bg-primary" id="totalPrice">$0.00</span></h5>
+                                                </div>
+                                                
+                                                <button type="button" id="checkoutButton" class="btn btn-primary mt-4">
+                                                    Proceed to Checkout
+                                                </button>
+                                            </form>
+                                            
+                                            <!-- Checkout Form (Hidden by default) -->
+                                            <form id="checkoutForm" class="checkout-form" style="display: none;">
+                                                <h5 class="mb-4">Complete Your Order</h5>
+                                                
+                                                <!-- Hidden fields to carry over the configuration -->
+                                                <input type="hidden" id="checkout-key" name="product_key">
+                                                <input type="hidden" id="checkout-base-color" name="base_color">
+                                                <input type="hidden" id="checkout-top-color" name="top_color">
+                                                <input type="hidden" id="checkout-warranty" name="warranty">
+                                                <input type="hidden" id="checkout-total" name="total_price">
+                                                
+                                                <div class="mb-3">
+                                                    <label class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" name="first_name" required>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" name="last_name" required>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label class="form-label">Lunch Preference</label>
+                                                    <select class="form-select" name="lunch" required>
+                                                        <option value="">Select an option</option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <label class="form-label">Email</label>
+                                                    <input type="email" class="form-control" name="email" required>
+                                                </div>
+                                                
+                                                <div class="d-flex justify-content-between mt-4">
+                                                    <button type="button" id="backToCustomize" class="btn btn-outline-secondary">
+                                                        <i class="fas fa-arrow-left me-2"></i> Back
+                                                    </button>
+                                                    <button type="submit" class="btn btn-success">
+                                                        Complete Order <i class="fas fa-check ms-2"></i>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="mt-5 text-center text-muted">
+            <p>&copy; 2023 KeyShop - Premium Keyboard Options</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
